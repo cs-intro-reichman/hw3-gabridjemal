@@ -29,8 +29,8 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		str1 = preProcess(str1);
-		str2 = preProcess(str2);
+		str1 = preProcess(str1).replace(" ", ""); 
+    	str2 = preProcess(str2).replace(" ", "");
 		if (str1.length() != str2.length()) {
 			return false; }
 		else {
@@ -58,7 +58,7 @@ public class Anagram {
 		str = str.toLowerCase();
 		for (int i = 0; i<str.length(); i++) {
 			char c = str.charAt(i);
-			if (c >= 'a' && c <= 'z') {
+			if ((c >= 'a' && c <= 'z' )|| c == ' ') {
             	preProcessed += c;
 		}}
 
