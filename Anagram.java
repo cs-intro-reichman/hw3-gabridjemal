@@ -29,14 +29,14 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		str1 = preProcess(str1).replace(" ", ""); 
-    	str2 = preProcess(str2).replace(" ", "");
-		if (str1.length() != str2.length()) {
+		String s1 = preProcess(str1);
+		String s2 = preProcess(str2);
+		if (s1.length() != s2.length()) {
 			return false; }
 		else {
-			String temp = str2;
-			for (int i=0; i<str1.length(); i++) {
-				char c = str1.charAt(i);
+			String temp = s2;
+			for (int i=0; i<s1.length(); i++) {
+				char c = s1.charAt(i);
 				int index = temp.indexOf(c);
 				if (index == -1) {
 					return false;
@@ -55,10 +55,11 @@ public class Anagram {
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
 		String preProcessed = "";
-		str = str.toLowerCase();
 		for (int i = 0; i<str.length(); i++) {
 			char c = str.charAt(i);
-			if ((c >= 'a' && c <= 'z' )|| c == ' ') {
+			if (c >= 'A' && c <= 'Z') {
+            	c = (char)(c + 32);}
+			if ((c >= 'a' && c <= 'z' )) {
             	preProcessed += c;
 		}}
 

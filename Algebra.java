@@ -116,6 +116,6 @@ public class Algebra {
 		for (i=0; times(i, i)<=x; i++) {
 
 		}
-		return i-1;
+		return minus(i,1);
 	}	  	  
 }

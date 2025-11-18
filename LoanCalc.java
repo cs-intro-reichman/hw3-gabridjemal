@@ -81,7 +81,7 @@ public class LoanCalc {
 				H = g;          
 			}
 
-			g = (L + H) / 2.0;
+			g = (L + H) / 2.0; 
 		}
 
     return g;
