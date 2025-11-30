@@ -3,6 +3,7 @@
 // Math.sqrt. All the functions in this class operate on int values and
 // return int values.
 
+// very good work, well done!
 public class Algebra {
 	public static void main(String args[]) {
 	
